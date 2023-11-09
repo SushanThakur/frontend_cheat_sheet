@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,700;0,900;1,300&family=Open+Sans:wght@600;700&family=Poppins:wght@300;400;600&display=swap");
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        font-family: "poppins";
+        flex-direction: column;
+      }
+
+      /* Utility classes */
+      .animate {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+      }
+      .animate.animate--infinite {
+        animation-iteration-count: infinite;
+      }
+      .animate--direction--alternate {
+        animation-direction: alternate;
+      }
+      .animate--delay-1s {
+        animation-delay: 1s;
+      }
+      .animate--fast {
+        animation-duration: 0.6s;
+      }
+      .animate--slow {
+        animation-duration: 3s;
+      }
+
+      @keyframes slideInLeft {
+        from {
+          transform: translateX(-300px);
+        }
+
+        to {
+          transform: translateX(0px);
+        }
+      }
+      /* .heading-1 {
+        animation-name: slideInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-iteration-count: 5;
+        animation-direction: alternate;
+        animation-fill-mode: none;
+      } */
+
+      .slideInLeft {
+        animation-name: slideInLeft;
+        animation-timing-function: ease-in;
+
+        /* transform-origin: ; */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="animate slideInLeft animate--fast">Hello, World!</h1>
+    <h2 class="animate slideInLeft animate--slow">Hello, World!</h2>
+    <h3
+      class="animate slideInLeft animate--delay-1s animate--infinite animate--direction--alternate">
+      Hello, World!
+    </h3>
+  </body>
+</html>
